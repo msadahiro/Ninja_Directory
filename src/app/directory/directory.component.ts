@@ -2,6 +2,7 @@ import { FilterPipe } from '../filter.pipe';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { LoggingService } from '../logging.service';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-directory',
@@ -9,16 +10,15 @@ import { LoggingService } from '../logging.service';
   styleUrls: ['./directory.component.css']
 })
 export class DirectoryComponent implements OnInit {
-  ninjas = [
-    {name: "Naruto", belt:'black'},
-    {name: "Saske", belt:'Blue'},
-    {name: "Gara", belt: 'Brown'}
-  ];
-  constructor(private logger: LoggingService) {}
+  ninjas = [];
+  constructor(private logger: LoggingService, private dataService: DataService) {}
   logIt(){
     this.logger.log();
   }
   ngOnInit() {
+    this.dataService.fetchData().subscribe(
+      (data) => this.ninjas = data
+    );
   }
 
 }

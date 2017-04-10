@@ -9,6 +9,11 @@ export class HomeComponent implements OnInit {
   homeTitle = "Ninja Directory"
   myString = "I like Angular2";
   myBoolean = true;
+
+  alertMe(val){
+    alert(val);
+  }
+
   constructor() { }
 
   ngOnInit() {

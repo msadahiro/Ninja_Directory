@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-home',
@@ -7,14 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   homeTitle = "Ninja Directory"
-  // myString = "I like Angular2";
-  // myBoolean = true;
-
-  // alertMe(val){
-  //   alert(val);
-  // }
   @Input() ninja;
+  @Output() onYell = new EventEmitter();
 
+  // then it fires this. onYell has emit. 
+  fireYellEvent(e){
+    this.onYell.emit(e);
+  }
   constructor() { }
 
   ngOnInit() {

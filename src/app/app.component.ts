@@ -13,4 +13,8 @@ export class AppComponent {
     name: "Naruto",
     belt: "Orange"
   };
+  yell(e){
+    alert("I AM YELLING");
+    console.log(e);
+  }
 }

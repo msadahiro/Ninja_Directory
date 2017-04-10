@@ -7,12 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   homeTitle = "Ninja Directory"
-  myString = "I like Angular2";
-  myBoolean = true;
+  // myString = "I like Angular2";
+  // myBoolean = true;
 
-  alertMe(val){
-    alert(val);
-  }
+  // alertMe(val){
+  //   alert(val);
+  // }
+  ninja = {
+    name: "Yoshi",
+    belt:"Black"
+  };
 
   constructor() { }
 

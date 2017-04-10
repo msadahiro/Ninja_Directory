@@ -1,6 +1,7 @@
 import { FilterPipe } from '../filter.pipe';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { LoggingService } from '../logging.service';
 
 @Component({
   selector: 'app-directory',
@@ -13,8 +14,10 @@ export class DirectoryComponent implements OnInit {
     {name: "Saske", belt:'Blue'},
     {name: "Gara", belt: 'Brown'}
   ];
-  constructor() {}
-
+  constructor(private logger: LoggingService) {}
+  logIt(){
+    this.logger.log();
+  }
   ngOnInit() {
   }
 

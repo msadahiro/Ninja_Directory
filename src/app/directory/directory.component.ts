@@ -29,5 +29,8 @@ export class DirectoryComponent implements OnInit {
       this.ninjas.push(snapshot.val());
     })
   }
+  fbPostData(name,belt){
+    firebase.database().ref('/').push({name:name, belt:belt})
+  }
 
 }

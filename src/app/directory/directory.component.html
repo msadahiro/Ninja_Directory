@@ -12,4 +12,10 @@
     </li>
 </ul>
 
-<button (click)="logIt()">Log me</button>
+<form id="add-ninja">
+    <label for="">Name: </label>
+    <input type="text" name="ninjaname" [(ngModel)]="name">
+    <label for="">Belt: </label>
+    <input type="text" name="ninjabelt" [(ngModel)]="belt">
+    <button (click)="fbPostData(name,belt)">Add Ninja</button>
+</form>
